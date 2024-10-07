@@ -1,7 +1,6 @@
 # Library Book Due Notification System using Twilio API
 
-This is a Java Spring Boot application for managing library transactions. The application sends SMS notifications to users when a book is issued or when a book is due, using Twilio's API. 
-The core functionality revolves around issuing books, returning books, and sending reminders via SMS.
+This is a Java Spring Boot application for managing library transactions. The application sends SMS notifications to users when a book is issued or when a book is due, using Twilio's API. The core functionality revolves around issuing books, returning books, and sending reminders via SMS.
 
 ## Technologies Used
 * Java 8
@@ -53,16 +52,16 @@ Method: GET
 ## Architecture
 
 1. Core Components:
-Controller: Manages the API endpoints
-Service: Contains business logic. This includes handling book issuance, returns, and
-communication with Twilio's SMS API.
-Repository: Uses JPA to communicate with the database
+   
+Controller: Manages the API endpoints  
+Service: Contains business logic. This includes handling book issuance, returns, and communication with Twilio's SMS API.  
+Repository: Uses JPA to communicate with the database.  
 
-2. Twilio Integration:
+3. Twilio Integration:
 The application integrates with Twilio to send SMS notifications. In the TransactionService, the Twilio SDK is used to send messages using the following flow:
 Message.creator(new PhoneNumber(toPhoneNumber), new PhoneNumber(fromPhoneNumber), messageBody).create();
 
-3. Error Handling:
+5. Error Handling:
 The application catches errors related to invalid transactions and returns appropriate error messages.
 For ex, if a book is not found, a custom exception, BookNotFoundException is thrown and handled at the controller level.
 
@@ -74,7 +73,7 @@ The system checks if the book is available and whether the user exists.
 If all checks pass, a new Transaction is created, and the book's availability is updated.
 The system sends an SMS notification using Twilio to confirm the book's issuance.
 
-2. Returning a Book:
+3. Returning a Book:
 The user initiates a return request.
 The system retrieves the corresponding transaction, updates the book’s availability to available, and records the return date.
 An SMS notification is sent to confirm the return.
@@ -82,11 +81,11 @@ An SMS notification is sent to confirm the return.
 ## Unit Testing
 Testing tools used:
 JUnit 5 for running unit tests.
-Mockito for mocking dependencies, such as repositories and Twilio’s API.
+Mockito for mocking dependencies, such as repositories and Twilio’s API.  
 
 ## Future Enhancements:
-User Authentication: OAuth2/JWT-based authentication can be implemented for user login and securing the endpoints.
-Monitoring: Can be integrated with Splunk for better logging and monitoring of the requests
+User Authentication: OAuth2/JWT-based authentication can be implemented for user login and securing the endpoints. 
+Monitoring: Can be integrated with Splunk for better logging and monitoring of the requests.  
 Cloud: The application can be deployed to a Cloud Service to maintain scalability and resilience.
 
 ## Database setup:
