@@ -19,7 +19,7 @@ The core functionality revolves around issuing books, returning books, and sendi
 4. Integration with Twilio: SMS notifications are handled using Twilio's Message.creator() API.
 
 ## Endpoints:
-1. Issue a Book
+Issue a Book
 This endpoint issues a book to a user and sends an SMS notification to the user with the due date.
 
 URL: /api/transactions/issue
@@ -53,20 +53,18 @@ Method: GET
 ## Architecture
 
 1. Core Components:
-
 Controller: Manages the API endpoints
 Service: Contains business logic. This includes handling book issuance, returns, and
 communication with Twilio's SMS API.
+Repository: Uses JPA to communicate with the database
 
-2. Repository: Uses JPA to communicate with the database
-
-3. Twilio Integration:
+2. Twilio Integration:
 The application integrates with Twilio to send SMS notifications. In the TransactionService, the Twilio SDK is used to send messages using the following flow:
 Message.creator(new PhoneNumber(toPhoneNumber), new PhoneNumber(fromPhoneNumber), messageBody).create();
 
- 4. Error Handling:
+3. Error Handling:
 The application catches errors related to invalid transactions and returns appropriate error messages.
-For ex, if a book is not found, a custom exception,BookNotFoundException is thrown and handled at the controller level.
+For ex, if a book is not found, a custom exception, BookNotFoundException is thrown and handled at the controller level.
 
 ## End-to-End Flow:
 
@@ -76,7 +74,7 @@ The system checks if the book is available and whether the user exists.
 If all checks pass, a new Transaction is created, and the book's availability is updated.
 The system sends an SMS notification using Twilio to confirm the book's issuance.
 
-3. Returning a Book:
+2. Returning a Book:
 The user initiates a return request.
 The system retrieves the corresponding transaction, updates the book’s availability to available, and records the return date.
 An SMS notification is sent to confirm the return.
@@ -92,7 +90,7 @@ Monitoring: Can be integrated with Splunk for better logging and monitoring of t
 Cloud: The application can be deployed to a Cloud Service to maintain scalability and resilience.
 
 ## Database setup:
-## Sql script:
+### Sql script:
 
 CREATE TABLE users (
     id BIGSERIAL PRIMARY KEY,
