@@ -142,7 +142,7 @@ INSERT INTO transactions (user_id, book_id, issue_date, due_date, return_date) V
 4) For Phone number, Twilio expects you to either use their free virtual phone number or buy their Twilio-provisioned phone number (2).
    For this project, a trail virtual number was used. Once you get the number, add it in the application.properties file.
 
-References:
+References:  
 [1] https://login.twilio.com/u/signup  
 [2] https://www.twilio.com/docs/messaging/quickstart/java
 
