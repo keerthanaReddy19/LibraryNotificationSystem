@@ -133,3 +133,21 @@ INSERT INTO transactions (user_id, book_id, issue_date, due_date, return_date) V
 (2, 102, '2024-09-10', '2024-09-24', '2024-09-23'), 
 (3, 103, '2024-09-20', '2024-10-04', NULL), 
 (4, 104, '2024-09-25', '2024-10-09', '2024-10-08'); 
+
+##Twilio Setup:
+
+1) Create Twilio account (1)
+2) After you login into your Twilio Dashboard, you will find your Twilio SID, and AUTH token under the Project Info section.
+3) Add them to the application.properties file.
+4) For Phone number, Twilio expects you to either use their free virtual phone number or buy their Twilio-provisioned phone number (2).
+   For this project, a trail virtual number was used. Once you get the number, add it in the application.properties file.
+
+References:
+[1] https://login.twilio.com/u/signup
+[2] https://www.twilio.com/docs/messaging/quickstart/java
+
+
+
+
+
+
