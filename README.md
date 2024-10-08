@@ -134,7 +134,7 @@ INSERT INTO transactions (user_id, book_id, issue_date, due_date, return_date) V
 (3, 103, '2024-09-20', '2024-10-04', NULL), 
 (4, 104, '2024-09-25', '2024-10-09', '2024-10-08'); 
 
-##Twilio Setup:
+## Twilio Setup:
 
 1) Create Twilio account (1)
 2) After you login into your Twilio Dashboard, you will find your Twilio SID, and AUTH token under the Project Info section.
