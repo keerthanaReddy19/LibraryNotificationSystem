@@ -143,7 +143,7 @@ INSERT INTO transactions (user_id, book_id, issue_date, due_date, return_date) V
    For this project, a trail virtual number was used. Once you get the number, add it in the application.properties file.
 
 References:
-[1] https://login.twilio.com/u/signup
+[1] https://login.twilio.com/u/signup  
 [2] https://www.twilio.com/docs/messaging/quickstart/java
 
 
